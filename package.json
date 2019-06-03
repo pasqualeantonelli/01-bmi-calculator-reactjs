@@ -2,10 +2,7 @@
   "name": "01-bmi-calculator-reactjs",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pasqualeantonelli/01-bmi-calculator-reactjs.git"
-  },
+  "repository": "git+https://github.com/pasqualeantonelli/01-bmi-calculator-reactjs.git",
   "author": "Dexter Fitzgerald Stowers <DEXTER@clemson.edu>",
   "license": "MIT",
   "description": "",
