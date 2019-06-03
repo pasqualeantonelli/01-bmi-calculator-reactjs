@@ -1,0 +1,25 @@
+{
+  "name": "01-bmi-calculator-reactjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pasqualeantonelli/01-bmi-calculator-reactjs.git"
+  },
+  "author": "Dexter Fitzgerald Stowers <DEXTER@clemson.edu>",
+  "license": "MIT",
+  "description": "",
+  "bugs": {
+    "url": "https://github.com/pasqualeantonelli/01-bmi-calculator-reactjs/issues"
+  },
+  "homepage": "https://github.com/pasqualeantonelli/01-bmi-calculator-reactjs#readme",
+  "dependencies": {
+    "parcel": "^1.12.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
