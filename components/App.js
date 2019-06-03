@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
+import BMI from '/components/./BMI'
 
 class App extends Component {
     render() {
         return <div>
-            <h1> Weklcome!</h1>
-            <p>Here's is my reract app built manually with parcel!</p>
+            <BMI />
         </div>
     }
 }
