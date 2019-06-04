@@ -25936,7 +25936,12 @@ function (_Component) {
       } else if (bmi < 29.9) {
         return 'Overweight';
       } else {
-        return 'Obese';
+        return _react.default.createElement("div", null, _react.default.createElement("span", {
+          className: "warning"
+        }, "Obese"), ' ', _react.default.createElement("a", {
+          className: "sitelink",
+          href: "http://someproductsite.com"
+        }, "What can I do?"));
       }
     }
   }, {

@@ -57,7 +57,13 @@ class BMI extends Component {
         } else if (bmi < 29.9) {
             return 'Overweight'
         } else {
-            return 'Obese'
+            return <div>
+                <span className="warning">Obese</span>
+                {' '}
+                <a className='sitelink' href="http://someproductsite.com">
+                    What can I do?
+                </a>
+            </div>
         }
     }
 
