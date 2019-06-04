@@ -24,7 +24,32 @@ class BMI extends Component {
         this.setState({weight: ev.target.value});
     }
 
+    displayHeight() {
+        const feet = Math.floor(this.state.height / 12);
+        const inches = this.state.height % 12;
+        return `${feet} feet ${inches} ` + this.pluralize(inches, ' inch', ' inches')
+}
 
+    displayWeight() {
+        return this.state.weight + ' ' + this.pluralize(this.state.weight, ' pound', ' pounds')
+    }
+
+    pluralize(count, singular, plural) {
+        if (count === 1) {
+            return singular
+        }
+        return plural
+    }
+
+    displayBMI() {
+        let bmi = 703 * this.state.weight / (this.state.height * this.state.height)
+        let lastTwoDecimalPlaces = Math.floor(bmi * 100) % 100;
+        return Math.floor(bmi) + '.' + lastTwoDecimalPlaces;
+    }
+
+    displayClassification() {
+        return 'Normal';
+    }
     render() {
         return <div className="container">
             <h1>BMI Calculator</h1>
@@ -42,11 +67,19 @@ class BMI extends Component {
             </p>
 
             <div className="result">
-                 {this.state.height}
+                 {this.displayHeight()}
             </div>
 
             <div className="result">
-                 {this.state.weight}
+                 {this.displayWeight()}
+            </div>
+
+            <div className="result">
+                 {this.displayBMI()}
+            </div>
+
+            <div className="result">
+                 {this.displayClassification()}
             </div>
         </div>
     }

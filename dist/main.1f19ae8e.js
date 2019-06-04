@@ -25896,6 +25896,39 @@ function (_Component) {
       });
     }
   }, {
+    key: "displayHeight",
+    value: function displayHeight() {
+      var feet = Math.floor(this.state.height / 12);
+      var inches = this.state.height % 12;
+      return "".concat(feet, " feet ").concat(inches, " ") + this.pluralize(inches, ' inch', ' inches');
+    }
+  }, {
+    key: "displayWeight",
+    value: function displayWeight() {
+      return this.state.weight + ' ' + this.pluralize(this.state.weight, ' pound', ' pounds');
+    }
+  }, {
+    key: "pluralize",
+    value: function pluralize(count, singular, plural) {
+      if (count === 1) {
+        return singular;
+      }
+
+      return plural;
+    }
+  }, {
+    key: "displayBMI",
+    value: function displayBMI() {
+      var bmi = 703 * this.state.weight / (this.state.height * this.state.height);
+      var lastTwoDecimalPlaces = Math.floor(bmi * 100) % 100;
+      return Math.floor(bmi) + '.' + lastTwoDecimalPlaces;
+    }
+  }, {
+    key: "displayClassification",
+    value: function displayClassification() {
+      return 'Normal';
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react.default.createElement("div", {
@@ -25914,9 +25947,13 @@ function (_Component) {
         onChange: this.handleWeightChange
       })), _react.default.createElement("div", {
         className: "result"
-      }, this.state.height), _react.default.createElement("div", {
+      }, this.displayHeight()), _react.default.createElement("div", {
         className: "result"
-      }, this.state.weight));
+      }, this.displayWeight()), _react.default.createElement("div", {
+        className: "result"
+      }, this.displayBMI()), _react.default.createElement("div", {
+        className: "result"
+      }, this.displayClassification()));
     }
   }]);
 
@@ -26024,7 +26061,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62618" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51685" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
