@@ -48,8 +48,19 @@ class BMI extends Component {
     }
 
     displayClassification() {
-        return 'Normal';
+    // To make sure is not a string but an integer
+        const bmi = parseFloat(this.displayBMI());
+        if (bmi < 18.5) {
+            return 'Underweight'
+        } else if (bmi < 24.9) {
+            return 'Normal'
+        } else if (bmi < 29.9) {
+            return 'Overweight'
+        } else {
+            return 'Obese'
+        }
     }
+
     render() {
         return <div className="container">
             <h1>BMI Calculator</h1>

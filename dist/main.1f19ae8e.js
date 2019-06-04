@@ -25926,7 +25926,18 @@ function (_Component) {
   }, {
     key: "displayClassification",
     value: function displayClassification() {
-      return 'Normal';
+      // To make sure is not a string but an integer
+      var bmi = parseFloat(this.displayBMI());
+
+      if (bmi < 18.5) {
+        return 'Underweight';
+      } else if (bmi < 24.9) {
+        return 'Normal';
+      } else if (bmi < 29.9) {
+        return 'Overweight';
+      } else {
+        return 'Obese';
+      }
     }
   }, {
     key: "render",
